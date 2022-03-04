@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: yellowgreen;
+}
+
+header h1 {
+    font-size: 5rem;
+}
+
+#numeri_random {
+    color: blue;
+    font-weight: bold;
+}
+
+#btn_check {
+    font-size: 1.5rem;
+}
+
+.user_input_numbers {
+    display: none;
+}
+
+.count_down {
+    font-size: 10rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.numbers_guessed {
+    color: blue;
+}
+
+.result_message {
+    display: none;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    margin: 0 auto;
+    background: tomato;
+    width: 30rem;
+    border-radius: 25px;
+}
