@@ -16,34 +16,29 @@ const userNumber2 = document.querySelector(".number2");
 const userNumber3 = document.querySelector(".number3");
 const userNumber4 = document.querySelector(".number4");
 const userNumber5 = document.querySelector(".number5");
-const numbersGuessed = document.querySelector(".numbers.guessed");
+const numbersGuessed = document.querySelector(".numbers_guessed");
 const btnCheck = document.getElementById("btn_check");
 
 
 // Take value from user inputs and check it with the random numbers
 btnCheck.addEventListener("click", function(){
     let userNumbers = [];
-    let userNumberValue1 = userNumber1.value;
-    let userNumberValue2 = userNumber2.value;
-    let userNumberValue3 = userNumber3.value;
-    let userNumberValue4 = userNumber4.value;
-    let userNumberValue5 = userNumber5.value;
+    const userNumberValue1 = parseInt(userNumber1.value);
+    const userNumberValue2 = parseInt(userNumber2.value);
+    const userNumberValue3 = parseInt(userNumber3.value);
+    const userNumberValue4 = parseInt(userNumber4.value);
+    const userNumberValue5 = parseInt(userNumber5.value);
+
 
     userNumbers.push(userNumberValue1, userNumberValue2, userNumberValue3, userNumberValue4, userNumberValue5);
-    console.log(userNumbers);
     documentResultMessage.style.display = "flex";
 
-    let arrNumbGuessed = [];
-    for (let i = 0; i < userNumbers; i++) {
-        if (arrRandomNumbers.includes(i)) {
-            arrNumbGuessed.push(i);
-        }
-    }
-    console.log(arrNumbGuessed);
-    // numbersGuessed.innerHTML = 
+    const arrNumbGuessed = userNumbers.filter(n => arrRandomNumbers.includes(n));
+    
+    numbersGuessed.innerHTML = arrNumbGuessed;
 });
 
-// Create a random not doubled number
+// Create random not doubled numbers
 const minValue = 1;
 const maxValue = 1000;
 const arrRandomNumbers = [];
@@ -70,7 +65,7 @@ function generateRandomNumber(min, max) {
 
 
 // Countdown
-let secondsLeft = 5;
+let secondsLeft = 31;
 const countDown = setInterval(timer, 1000);   
 
 function timer() {
@@ -85,13 +80,3 @@ function timer() {
     }
 
 }
-
-
-/* 
-creo e visualizzo 5 numeri random preferibilmente non doppi     x
-parte timer di 30 secondi
-dopo 30 secondi numeri spariscono
-appare prompt/ metto text area
-utente deve inserire i 5 numeri
-sistema dice quali numeri ha indovinato
-*/
